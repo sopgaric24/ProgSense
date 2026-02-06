@@ -1,0 +1,47 @@
+
+.select-usertype {
+  position: relative;
+  display: flex;
+  background-color: #e8f4f8; 
+  border-radius: 12px;
+  padding: 4px;
+  width: 100%;
+  max-width: 350px;
+  margin: 20px auto;
+  z-index: 1;
+}
+
+.slider-pill {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.user-btn {
+  flex: 1;
+  position: relative;
+  background: none;
+  border: none;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #888; 
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 2;
+  outline: none;
+}
+
+.user-btn.active {
+  color: var(--bg3); 
+}
+
+.user-btn:hover:not(.active) {
+  color: var(--black);
+}
