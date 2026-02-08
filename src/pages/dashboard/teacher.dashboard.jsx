@@ -194,14 +194,14 @@ const TeacherDashboard = ({ onLogout }) => {
           className={`tab-item ${activeTab === "responses" ? "active" : ""}`}
           onClick={() => setActiveTab("responses")}
         >
-          <img src={file} alt="Student" />
+          <img className="profile-img" src={file} alt="Student" />
           <span>Student Responses</span>
         </div>
         <div
           className={`tab-item ${activeTab === "verify" ? "active" : ""}`}
           onClick={() => setActiveTab("verify")}
         >
-          <img src={verified} alt="Verified user" />
+          <img className="verify-img" src={verified} alt="Verified user" />
           <span>Pending Students</span>
         </div>
       </div>
@@ -250,7 +250,7 @@ const TeacherDashboard = ({ onLogout }) => {
                           setIsModalOpen(true);
                         }}
                       >
-                        <img src={ViewIcon} alt="View response" />
+                        <img src={ViewIcon} className="view-img" alt="View response" />
                         <span>View Details</span>
                       </button>
                     </td>

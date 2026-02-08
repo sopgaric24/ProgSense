@@ -71,3 +71,8 @@ button:hover {
 ul {
   list-style: none;
 }
+
+.logo {
+  font-size: larger;
+  font-weight: 600;
+}

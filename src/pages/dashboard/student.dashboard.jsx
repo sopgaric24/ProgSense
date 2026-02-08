@@ -12,6 +12,7 @@ import arrow from "../../img/right-arrow.png";
 import blackarrow from "../../img/right-arrow-black.png";
 import check from "../../img/check.png";
 import done from "../../img/done.png";
+import view from "../../img/view.png";
 
 const StudentDashboard = ({ onLogout }) => {
   // --- ADDED LOGIC ---
@@ -206,7 +207,10 @@ const StudentDashboard = ({ onLogout }) => {
 
   const allResponses = [
     { title: "Part I. Programming Challenges", data: part1response },
-    { title: "Part II. Confidence, Motivation, and Attitude", data: part2response },
+    {
+      title: "Part II. Confidence, Motivation, and Attitude",
+      data: part2response,
+    },
     { title: "Part III. Learning Strategies and Support", data: part3response },
     { title: "Part IV. Reflection and Tool Evaluation", data: part4response },
   ];
@@ -232,29 +236,35 @@ const StudentDashboard = ({ onLogout }) => {
             <div className="part1 fade-in-section">
               <h2>Personal Information</h2>
               <div className="input-group">
-                <label>Full Name</label>
-                <input
-                  type="text"
-                  className="input readonly-input"
-                  value="Juan Dela Cruz"
-                  readOnly
-                />
+                <label>
+                  <span>Full Name</span>
+                  <input
+                    type="text"
+                    className="input readonly-input"
+                    value="Juan Dela Cruz"
+                    readOnly
+                  />
+                </label>
               </div>
               <div className="input-group">
-                <label>Grade Level</label>
-                <input
-                  type="text"
-                  className="input readonly-input"
-                  value="Grade 12"
-                  readOnly
-                />
-                <label>Section</label>
-                <input
-                  type="text"
-                  className="input readonly-input"
-                  value="Einstein-A"
-                  readOnly
-                />
+                <label>
+                  <span>Grade Level</span>
+                  <input
+                    type="text"
+                    className="input readonly-input"
+                    value="Grade 12"
+                    readOnly
+                  />
+                </label>
+                <label>
+                  <span>Section</span>
+                  <input
+                    type="text"
+                    className="input readonly-input"
+                    value="Einstein-A"
+                    readOnly
+                  />
+                </label>
               </div>
               <hr className="custom-divider" />
               <h2>Part I. Programming Challenges</h2>
@@ -348,7 +358,8 @@ const StudentDashboard = ({ onLogout }) => {
               to us. <span className="fullname">Juan Dela Cruz</span>
             </p>
             <button className="btn show-response" onClick={viewResponse}>
-              View my response
+              <span>View my response</span>
+              <img src={view} alt="View" />
             </button>
           </div>
         </div>
@@ -356,7 +367,7 @@ const StudentDashboard = ({ onLogout }) => {
 
       {isViewResponse && (
         <ViewResponse
-          studentName="John Doe"
+          studentName="John Smith"
           grade="Grade 11"
           section="Einstein-A"
           allResponses={allResponses}
