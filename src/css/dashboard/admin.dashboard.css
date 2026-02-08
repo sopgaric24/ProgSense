@@ -1,0 +1,15 @@
+
+
+header.dashboard.Admin {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  background-color: var(--primary-5);
+  border-bottom: 1px solid var(--bg2);
+  padding: 0 20px;
+  align-items: center;
+}
+
+.admin-container {
+    height: 100vh;
+}

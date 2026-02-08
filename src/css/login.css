@@ -25,7 +25,8 @@ h1 {
   margin-bottom: 8px;
   font-size: 2rem;
 }
-p {
+
+.p.login {
   color: #666;
   font-size: 0.9rem;
   margin-bottom: 24px;
@@ -60,7 +61,9 @@ p {
   font-size: 0.85rem;
 }
 
-.input {
+.input.username,
+.input.password,
+.input.login {
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -161,6 +164,10 @@ span.noaccount {
   text-decoration: underline;
 }
 
+.sign-up {
+  color: var(--bg3);
+}
+
 /* Ensure containers have a smooth entrance */
 .container {
   animation: fadeIn 0.4s ease-out;
@@ -183,16 +190,16 @@ span.noaccount {
 /* Responsive Design */
 @media (max-width: 700px) {
   .right {
-    display: none; 
+    display: none;
   }
 
   .left {
     flex: 1;
-    width: 100%; 
+    width: 100%;
     padding: 20px;
   }
 
   .container {
-    max-width: 90% !important; 
+    max-width: 90% !important;
   }
 }

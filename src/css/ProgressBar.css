@@ -1,0 +1,36 @@
+.progress-container {
+  width: 100%;
+  max-width: 500px;
+  font-family: sans-serif;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.progress-bars {
+  display: flex;
+  gap: 10px; 
+  margin-bottom: 8px;
+}
+
+.bar {
+  height: 12px;
+  flex: 1; 
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.bar.active {
+  background-color: var(--bg3);
+}
+
+.bar.inactive {
+  background-color: var(--bg2);
+}
+
+.step-text {
+  text-align: right;
+  color: var(--black);
+  font-size: 14px;
+  margin: 0;
+  font-weight: 500;
+}

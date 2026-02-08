@@ -1,0 +1,56 @@
+.ps-yn-container {
+  background: var(--white);
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 650px;
+  box-shadow: var(--shadow);
+  margin-block: 20px;
+  width: 100%;
+}
+
+.ps-yn-question {
+  color: var(--black);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.ps-yn-options {
+  display: flex;
+  gap: 40px;
+}
+
+.ps-yn-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.ps-yn-circle {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--bg3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.ps-yn-circle.selected {
+  background-color: var(--bg3);
+}
+
+.ps-yn-inner-dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--white);
+  border-radius: 50%;
+}
+
+.ps-yn-label {
+  font-size: 1rem;
+  color: var(--black);
+  font-weight: 500;
+}
