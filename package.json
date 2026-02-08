@@ -1,6 +1,7 @@
 {
   "name": "progsense",
   "version": "0.1.0",
+  "homepage": "https://sopgaric24.github.io/ProgSense",
   "private": true,
   "dependencies": {
     "@supabase/supabase-js": "^2.91.1",
