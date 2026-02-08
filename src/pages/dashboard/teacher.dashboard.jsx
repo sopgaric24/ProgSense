@@ -12,6 +12,21 @@ const TeacherDashboard = ({ onLogout }) => {
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [activeTab, setActiveTab] = useState("responses");
 
+  // Function to open modal
+  const handleViewDetails = (student) => {
+    setSelectedStudent(student);
+    setIsModalOpen(true);
+    // Optional: Prevent background scrolling when modal is open
+    document.body.style.overflow = "hidden";
+  };
+
+  // Function to close modal
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedStudent(null);
+    document.body.style.overflow = "auto";
+  };
+
   // --- THESE ARE THE EXACT SAME ARRAYS FROM YOUR STUDENT VIEW ---
   const part1response = [
     {
@@ -226,7 +241,10 @@ const TeacherDashboard = ({ onLogout }) => {
             <table className="modern-table">
               <thead>
                 <tr>
-                  <th>Student Name {activeTab === "responses" ? "(Verified)" : "(Pending)"}</th>
+                  <th>
+                    Student Name{" "}
+                    {activeTab === "responses" ? "(Verified)" : "(Pending)"}
+                  </th>
                   <th>Grade & Section</th>
                   <th>Date Submitted</th>
                   <th className="text-right">Action</th>
@@ -250,7 +268,11 @@ const TeacherDashboard = ({ onLogout }) => {
                           setIsModalOpen(true);
                         }}
                       >
-                        <img src={ViewIcon} className="view-img" alt="View response" />
+                        <img
+                          src={ViewIcon}
+                          className="view-img"
+                          alt="View response"
+                        />
                         <span>View Details</span>
                       </button>
                     </td>
@@ -290,14 +312,15 @@ const TeacherDashboard = ({ onLogout }) => {
       </div>
 
       {isModalOpen && selectedStudent && (
-        <div className="modal-overlay">
-          <div className="modal-content">
+        <div className="modal-overlay" onClick={handleCloseModal}>
+          {/* onClick on overlay closes modal, stopPropagation on content prevents it */}
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <ViewResponse
               studentName={selectedStudent.name}
               grade={`Grade ${selectedStudent.grade}`}
               section={selectedStudent.section}
               allResponses={selectedStudent.data}
-              onExit={() => setIsModalOpen(false)}
+              onExit={handleCloseModal}
             />
           </div>
         </div>
