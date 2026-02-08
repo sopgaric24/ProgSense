@@ -97,6 +97,7 @@ button.action-link {
   border-radius: 3px;
   padding: 4px 8px;
   gap: 10px;
+  align-items: center;
 }
 
 button.action-link:hover {
@@ -124,6 +125,7 @@ button.action-link:hover {
   transition: color 0.2s;
   gap: 10px;
   display: flex;
+  align-items: center;
 }
 
 .tab-item:hover {
@@ -174,4 +176,11 @@ button.action-link:hover {
 
 .reject-btn:hover {
   color: #dc2626;
+}
+
+.view-img,
+.profile-img,
+.verify-img {
+  width: 16px;
+  height: 16px;
 }

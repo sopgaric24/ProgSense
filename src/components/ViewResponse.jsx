@@ -1,5 +1,6 @@
 import React from "react";
 import ResponseAnswer from "./ResponseAnswer";
+import close from "../img/close.png";
 
 const ViewResponse = ({ studentName, grade, section, allResponses, onExit }) => {
   return (
@@ -12,7 +13,9 @@ const ViewResponse = ({ studentName, grade, section, allResponses, onExit }) => 
             <span className="classsection">{section}</span>
           </p>
         </div>
-        <button onClick={(e) => { e.preventDefault(); onExit(); }}>EXIT</button>
+        <button onClick={(e) => { e.preventDefault(); onExit(); }}>
+          <img src={close} className="img close" alt="Close" />
+        </button>
       </div>
 
       {allResponses.map((section, index) => (
