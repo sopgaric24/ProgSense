@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ProgSense/static/css/main.5e9099be.css",
-    "main.js": "/ProgSense/static/js/main.40de017d.js",
+    "main.js": "/ProgSense/static/js/main.8c63d8a1.js",
     "static/media/Login-photo.png": "/ProgSense/static/media/Login-photo.83fff0d33afb533c6322.png",
     "static/media/logout.png": "/ProgSense/static/media/logout.0becdbc391b7088ace83.png",
     "index.html": "/ProgSense/index.html",
     "main.5e9099be.css.map": "/ProgSense/static/css/main.5e9099be.css.map",
-    "main.40de017d.js.map": "/ProgSense/static/js/main.40de017d.js.map"
+    "main.8c63d8a1.js.map": "/ProgSense/static/js/main.8c63d8a1.js.map"
   },
   "entrypoints": [
     "static/css/main.5e9099be.css",
-    "static/js/main.40de017d.js"
+    "static/js/main.8c63d8a1.js"
   ]
 }
