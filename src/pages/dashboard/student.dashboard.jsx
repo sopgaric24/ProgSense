@@ -6,7 +6,6 @@ import ProgressBar from "../../components/ProgressBar";
 import RatingQuestion from "../../components/RatingQuestion";
 import YesNoQuestion from "../../components/YesNoQuestion";
 import OpenEndedQuestion from "../../components/OpenEndedQuestion";
-// import ResponseAnswer from "../../components/ResponseAnswer";
 import ViewResponse from "../../components/ViewResponse";
 import arrow from "../../img/right-arrow.png";
 import blackarrow from "../../img/right-arrow-black.png";

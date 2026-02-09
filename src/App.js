@@ -11,13 +11,10 @@ import AdminDashboard from "../src/pages/dashboard/admin.dashboard";
 import TeacherDashboard from "../src/pages/dashboard/teacher.dashboard";
 
 function App() {
-  // 'auth' for login/register, 'dashboard' for the student page
   const [view, setView] = useState("auth");
-  // Change showLogin to authMode
   const [authMode, setAuthMode] = useState("login");
   const [userType, setUserType] = useState("Student");
 
-  // Handler to "Log In"
   const handleAuthSubmit = (e) => {
     e.preventDefault();
 
@@ -76,7 +73,7 @@ function App() {
                     href="#"
                     onClick={(e) => {
                       e.preventDefault();
-                      setAuthMode("forgot"); // Correctly switching to forgot mode
+                      setAuthMode("forgot"); 
                     }}
                   >
                     Forgot password?
@@ -95,7 +92,7 @@ function App() {
                 className="btn sign-up"
                 onClick={(e) => {
                   e.preventDefault();
-                  setAuthMode("register"); // Fixed from setShowLogin(false)
+                  setAuthMode("register");
                 }}
               >
                 Sign Up
@@ -180,7 +177,7 @@ function App() {
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
-                  setAuthMode("login"); // Fixed from setShowLogin(true)
+                  setAuthMode("login"); 
                 }}
               >
                 Login
