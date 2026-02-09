@@ -139,7 +139,7 @@ function App() {
               />
               <label>Email</label>
               <input
-                type="text"
+                type="email"
                 className="input login create-account"
                 placeholder="e.g. sample@gmail.com"
                 required
@@ -205,7 +205,7 @@ function App() {
             <form className="login-form">
               <label>Email</label>
               <input
-                type="number"
+                type="email"
                 className="input login"
                 placeholder="e.g. user@gmail.com"
                 required
