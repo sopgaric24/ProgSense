@@ -85,10 +85,6 @@ header.dashboard.Teacher {
   color: #4b5563;
 }
 
-.text-right {
-  text-align: right;
-}
-
 /* Action Button/Link */
 button.action-link {
   display: flex;
