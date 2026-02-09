@@ -16,7 +16,6 @@ const TeacherDashboard = ({ onLogout }) => {
   const handleViewDetails = (student) => {
     setSelectedStudent(student);
     setIsModalOpen(true);
-    // Optional: Prevent background scrolling when modal is open
     document.body.style.overflow = "hidden";
   };
 
@@ -27,7 +26,7 @@ const TeacherDashboard = ({ onLogout }) => {
     document.body.style.overflow = "auto";
   };
 
-  // --- THESE ARE THE EXACT SAME ARRAYS FROM YOUR STUDENT VIEW ---
+  // --- Sample student responses ---
   const part1response = [
     {
       question: "I find programming syntax difficult to understand.",
@@ -337,9 +336,9 @@ const TeacherDashboard = ({ onLogout }) => {
         </div>
       </div>
 
+      {/* Modal for showing responses */}
       {isModalOpen && selectedStudent && (
         <div className="modal-overlay" onClick={handleCloseModal}>
-          {/* onClick on overlay closes modal, stopPropagation on content prevents it */}
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <ViewResponse
               studentName={selectedStudent.name}
