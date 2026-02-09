@@ -157,6 +157,9 @@ const TeacherDashboard = ({ onLogout }) => {
       name: "John Doe",
       grade: "12",
       section: "Einstein-A",
+      lrn: "501141600721",
+      submissionDate: "2/7/2026",
+      email: "user@gmail.com",
       data: allResponses,
     },
     {
@@ -164,6 +167,9 @@ const TeacherDashboard = ({ onLogout }) => {
       name: "Sofia Dela Cruz Garcia",
       grade: "11",
       section: "Einstein-A",
+      lrn: "501141600721",
+      submissionDate: "2/7/2026",
+      email: "user@gmail.com",
       data: allResponses,
     },
   ];
@@ -171,31 +177,43 @@ const TeacherDashboard = ({ onLogout }) => {
   const pendingStudents = [
     {
       id: 101,
-      name: "Maria Clara",
-      grade: "11",
-      section: "Bonifacio",
-      date: "2/8/2026",
+      name: "Maria Clara Santos",
+      grade: "12",
+      section: "Einstein-A",
+      lrn: "501141600721",
+      date: "2/7/2026",
+      email: "user@gmail.com",
+      data: allResponses,
     },
     {
       id: 102,
-      name: "Maria Clara",
-      grade: "11",
-      section: "Bonifacio",
-      date: "2/8/2026",
+      name: "Maria Clara Santos",
+      grade: "12",
+      section: "Einstein-A",
+      lrn: "501141600721",
+      date: "2/7/2026",
+      email: "user@gmail.com",
+      data: allResponses,
     },
     {
       id: 103,
-      name: "Maria Clara",
-      grade: "11",
-      section: "Bonifacio",
-      date: "2/8/2026",
+      name: "Maria Clara Santos",
+      grade: "12",
+      section: "Einstein-A",
+      lrn: "501141600721",
+      date: "2/7/2026",
+      email: "user@gmail.com",
+      data: allResponses,
     },
     {
       id: 104,
-      name: "Maria Clara",
-      grade: "11",
-      section: "Bonifacio",
-      date: "2/8/2026",
+      name: "Maria Clara Santos",
+      grade: "12",
+      section: "Einstein-A",
+      lrn: "501141600721",
+      date: "2/7/2026",
+      email: "user@gmail.com",
+      data: allResponses,
     },
   ];
 
@@ -246,7 +264,9 @@ const TeacherDashboard = ({ onLogout }) => {
                     {activeTab === "responses" ? "(Verified)" : "(Pending)"}
                   </th>
                   <th>Grade & Section</th>
+                  <th>Student Number (LRN) </th>
                   <th>Date Submitted</th>
+                  <th>Email</th>
                   <th className="text-right">Action</th>
                 </tr>
               </thead>
@@ -257,9 +277,11 @@ const TeacherDashboard = ({ onLogout }) => {
                     <td className="grade-section-cell">
                       Grade {student.grade} — {student.section}
                     </td>
+                    <td>{student.lrn}</td>
                     <td className="date-cell">
                       {student.submissionDate || "2/7/2026"}
                     </td>
+                    <td>{student.email}</td>
                     <td className="text-right">
                       <button
                         className="action-link"
@@ -287,7 +309,9 @@ const TeacherDashboard = ({ onLogout }) => {
                 <tr>
                   <th>Student Name</th>
                   <th>Grade & Section</th>
+                  <th>Student Number (LRN) </th>
                   <th>Request Date</th>
+                  <th>Email</th>
                   <th className="text-right">Action</th>
                 </tr>
               </thead>
@@ -298,7 +322,9 @@ const TeacherDashboard = ({ onLogout }) => {
                     <td className="grade-section-cell">
                       Grade {student.grade} — {student.section}
                     </td>
+                    <td>{student.lrn}</td>
                     <td className="date-cell">{student.date}</td>
+                    <td>{student.email}</td>
                     <td className="text-right">
                       <button className="approve-btn">Approve</button>
                       <button className="reject-btn">Decline</button>

@@ -3,6 +3,7 @@ import "../src/css/App.css";
 import "../src/css/login.css";
 import Photo from "./img/Login-photo.png";
 import UserTypeToggle from "./components/UserTypeToggle";
+import info from "./img/info.png";
 
 // pages
 import StudentDashboard from "../src/pages/dashboard/student.dashboard";
@@ -12,8 +13,9 @@ import TeacherDashboard from "../src/pages/dashboard/teacher.dashboard";
 function App() {
   // 'auth' for login/register, 'dashboard' for the student page
   const [view, setView] = useState("auth");
-  const [showLogin, setShowLogin] = useState(true);
-  const [userType, setUserType] = useState("");
+  // Change showLogin to authMode
+  const [authMode, setAuthMode] = useState("login");
+  const [userType, setUserType] = useState("Student");
 
   // Handler to "Log In"
   const handleAuthSubmit = (e) => {
@@ -40,8 +42,8 @@ function App() {
   return (
     <div className="App">
       <div className="left">
-        {showLogin ? (
-          /* LOGIN CONTAINER */
+        {/* --- LOGIN VIEW --- */}
+        {authMode === "login" && (
           <div className="container login-container">
             <h1>Welcome to ProgSense</h1>
             <p className="p login">A Self-Assessment Tool for ICT Students</p>
@@ -65,10 +67,20 @@ function App() {
               <div className="addition">
                 <div className="rememberme">
                   <input type="checkbox" id="rem" />
-                  <label htmlFor="rem">Remember me</label>
+                  <label htmlFor="rem" className="rememberme">
+                    Remember me
+                  </label>
                 </div>
                 <div className="forgotpass">
-                  <a href="#">Forgot password?</a>
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setAuthMode("forgot"); // Correctly switching to forgot mode
+                    }}
+                  >
+                    Forgot password?
+                  </a>
                 </div>
               </div>
 
@@ -81,44 +93,84 @@ function App() {
               <p>Don't have account?</p>
               <button
                 className="btn sign-up"
-                href="#"
                 onClick={(e) => {
                   e.preventDefault();
-                  setShowLogin(false);
+                  setAuthMode("register"); // Fixed from setShowLogin(false)
                 }}
               >
                 Sign Up
               </button>
             </span>
           </div>
-        ) : (
-          /* REGISTER CONTAINER */
+        )}
+
+        {/* --- REGISTER VIEW --- */}
+        {authMode === "register" && (
           <div className="container register-container">
             <h1>Create Account</h1>
             <p>Join the ProgSense community</p>
 
-            <UserTypeToggle
-              mode="register"
-              onChange={(type) => setUserType(type)}
-            />
+            <div className="info-container">
+              <img src={info} alt="Information" />
+              <div className="info-text">
+                <p>
+                  <span>
+                    <strong>Important: </strong>
+                  </span>
+                  Account creation is exclusively for students.
+                </p>
+                <p>
+                  Please ensure your details match your official school records
+                </p>
+              </div>
+            </div>
 
             <form className="login-form" onSubmit={handleAuthSubmit}>
               <label>Full Name</label>
               <input
                 type="text"
-                className="input login"
+                className="input login create-account"
                 placeholder="e.g. Juan Dela Cruz"
                 required
               />
               <label>Username</label>
-              <input type="text" className="input login" required />
+              <input
+                type="text"
+                className="input login create-account"
+                placeholder="e.g. JuanDelaCruz123"
+                required
+              />
+              <label>Email</label>
+              <input
+                type="text"
+                className="input login create-account"
+                placeholder="e.g. sample@gmail.com"
+                required
+              />
+              <label>
+                Student Number <span>(LRN)</span>
+              </label>
+              <input
+                type="number"
+                className="input login create-account"
+                required
+                placeholder="e.g. 501141600721"
+              />
               <label>Password</label>
-              <input type="password" className="input login" required />
+              <input
+                type="password"
+                className="input login create-account"
+                required
+              />
               <label>Confirm Password</label>
-              <input type="password" className="input login" required />
+              <input
+                type="password"
+                className="input login create-account"
+                required
+              />
 
-              <button type="submit" className="btn login-btn">
-                Register as {userType}
+              <button type="submit" className="btn login-btn create-account">
+                Register
               </button>
             </form>
 
@@ -128,7 +180,7 @@ function App() {
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
-                  setShowLogin(true);
+                  setAuthMode("login"); // Fixed from setShowLogin(true)
                 }}
               >
                 Login
@@ -136,8 +188,54 @@ function App() {
             </span>
           </div>
         )}
+
+        {/* --- FORGOT PASSWORD VIEW --- */}
+        {authMode === "forgot" && (
+          <div className="container forgot-container">
+            <h1>Forgot Password?</h1>
+            <p>Enter your details to reset your access</p>
+
+            <div className="info-container">
+              <img src={info} alt="Information" />
+              <div className="info-text">
+                <p>
+                  <strong>Security Note:</strong> A reset link will be sent to
+                  your official school email.
+                </p>
+              </div>
+            </div>
+
+            <form className="login-form">
+              <label>Email</label>
+              <input
+                type="number"
+                className="input login"
+                placeholder="e.g. user@gmail.com"
+                required
+              />
+
+              <button type="submit" className="btn login-btn">
+                Send Reset Link
+              </button>
+            </form>
+
+            <span className="noaccount">
+              <p>Remembered your password?</p>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setAuthMode("login");
+                }}
+              >
+                Back to Login
+              </a>
+            </span>
+          </div>
+        )}
       </div>
 
+      {/* RIGHT SIDE REMAINS THE SAME */}
       <div className="right">
         <img src={Photo} alt="Login" />
         <div className="quote">
