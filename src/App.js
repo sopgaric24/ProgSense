@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../src/css/App.css";
 import "../src/css/login.css";
-import Photo from "./img/Login-photo.png";
+import Photo from "./img/school_background.jpg";
 import UserTypeToggle from "./components/UserTypeToggle";
 import info from "./img/info.png";
 
